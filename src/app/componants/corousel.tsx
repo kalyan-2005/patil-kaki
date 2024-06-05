@@ -38,7 +38,14 @@ export default function Corousel() {
     <div className="p-32 bg-gray-200/65">
       <h1 className="text-4xl font-bold text-center">Get Crest and get...</h1>
       <div className="my-12 flex gap-12 justify-center">
-        <button onClick={prevSlide}>left</button>
+        <Image
+          src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d5122ea3ebb_slider-arrow.svg"
+          alt="arrow"
+          className="transform rotate-180 cursor-pointer"
+          onClick={prevSlide}
+          width={30}
+          height={30}
+        />
         <div className="w-4/5 rounded-3xl bg-white p-6 relative overflow-hidden py-28">
           <div className="flex gap-4" ref={slideRef}>
             {images.map((image, index) => (
@@ -52,14 +59,26 @@ export default function Corousel() {
                   />
                 </div>
                 <div className="w-2/3 pe-16 pt-10">
-                    <h1 className="text-3xl py-8 font-semibold">Deep domain expertise</h1>
-                    <p>Our team members have years of experience leading supply chains for businesses ranging from $10M to $10B.</p>
+                  <h1 className="text-3xl py-8 font-semibold">
+                    Deep domain expertise
+                  </h1>
+                  <p>
+                    Our team members have years of experience leading supply
+                    chains for businesses ranging from $10M to $10B.
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <button onClick={nextSlide}>right</button>
+        <Image
+          src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d5122ea3ebb_slider-arrow.svg"
+          alt="arrow"
+          className="cursor-pointer"
+          onClick={nextSlide}
+          width={30}
+          height={30}
+        />
       </div>
     </div>
   );

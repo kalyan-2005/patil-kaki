@@ -70,12 +70,26 @@ export default function Blog() {
               an itch to write). We hope you find these posts interesting!
             </p>
             <div className="flex gap-4">
-              <button onClick={handlePrev}>left</button>
-              <button onClick={handleNext}>right</button>
+              <Image
+                src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d5122ea3ebb_slider-arrow.svg"
+                alt="arrow"
+                className="transform rotate-180 cursor-pointer"
+                onClick={handlePrev}
+                width={30}
+                height={30}
+              />
+              <Image
+                src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d5122ea3ebb_slider-arrow.svg"
+                alt="arrow"
+                className="cursor-pointer"
+                onClick={handleNext}
+                width={30}
+                height={30}
+              />
             </div>
           </div>
           <div>
-            <button className="p-2 px-4 rounded-full border self-end">
+            <button className="p-2 px-4 rounded-full border-2 font-semibold border-pink-300 inline-block text-transparent bg-clip-text hover:bg-clip-border hover:border-pink-400 hover:text-white bg-gradient-to-r via-pink-500 from-[#F48D88] to-violet-500">
               View all blogs
             </button>
           </div>
@@ -104,7 +118,12 @@ export default function Blog() {
                 </h1>
                 <div className="flex justify-between">
                   <h1>{blog.date}</h1>
-                  <h1>ICON</h1>
+                  <Image
+                    src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d07edea3eca_Vector.svg"
+                    alt="arrow"
+                    width={15}
+                    height={15}
+                  />
                 </div>
               </div>
             ))}

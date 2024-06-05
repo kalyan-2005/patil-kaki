@@ -1,12 +1,20 @@
+import Image from "next/image";
+import { FaTwitter, FaInstagram } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <div className="bg-primary text-gray-300 px-32 pb-32">
       <div className="flex justify-between">
         <div className="flex flex-col gap-8 w-2/5">
-          <div className="flex gap-4 items-center">
-            <h1>ICON</h1>
-            <h1 className="text-5xl font-bold text-white">Crest</h1>
-          </div>
+          <Image
+            src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326df120ea3eb2_logo-white.svg"
+            alt="logo"
+            width={200}
+            height={100}
+          />
           <p>
             Crest is an AI-powered supply chain software that provides companies
             tools for demand forecasting, inventory planning and more. This
@@ -42,11 +50,19 @@ export default function Footer() {
             <h1>HSR Layout, Bengaluru,</h1>
             <h1>India. 560102</h1>
           </div>
-          <div className="flex gap-2">
-            <h1>ICON</h1>
-            <h1>ICON</h1>
-            <h1>ICON</h1>
-            <h1>ICON</h1>
+          <div className="flex gap-4 text-lg">
+            <Link href="www.google.com">
+              <FaTwitter />
+            </Link>
+            <Link href="www.google.com">
+              <FaFacebookF />
+            </Link>
+            <Link href="www.google.com">
+              <FaInstagram />
+            </Link>
+            <Link href="www.google.com">
+              <FaLinkedinIn />
+            </Link>
           </div>
         </div>
       </div>
@@ -63,7 +79,13 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <h1>Arrow</h1>
+          <Image
+            src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d53d1ea3ece_go-to-top.svg"
+            alt="logo"
+            className="cursor-pointer hover:-translate-y-5 duration-500"
+            width={50}
+            height={50}
+          />
         </div>
       </div>
     </div>

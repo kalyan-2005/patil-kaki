@@ -55,22 +55,48 @@ export default function ProblemTarget() {
                 className="py-6 border-b border-gray-300 cursor-pointer"
                 onClick={() => setFeatureNo(index)}
               >
-                <h1 className="text-2xl font-semibold">{feature.name}</h1>
+                <h1
+                  className={`text-2xl font-semibold ${
+                    index === featureNo &&
+                    "inline-block text-transparent bg-clip-text bg-gradient-to-r via-pink-400 from-[#F48D88] to-violet-400"
+                  }`}
+                >
+                  {feature.name}
+                </h1>
                 {index === featureNo && (
                   <>
                     <p className="pt-4">{feature.desc}</p>
-                    <h1 className="py-2 font-semibold">Learn more</h1>
+                    <div className="flex gap-2 items-center group">
+                      <h1 className={`py-2 font-semibold ${index===featureNo&&"inline-block text-transparent bg-clip-text bg-gradient-to-r via-pink-400 from-[#F48D88] to-violet-400"}`}>Learn more</h1>
+                      <Image
+                        src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/63ff3b3e4dc16be9322e8817_right%20arrow.svg"
+                        className="w-4 group-hover:translate-x-2 duration-500"
+                        alt="image"
+                        width={500}
+                        height={500}
+                      />
+                    </div>
                   </>
                 )}
               </div>
             );
           })}
         </div>
-        <div className="w-1/2 rounded-l-xl bg-purple-100">
-            <Image src={features[featureNo].img} className="block m-auto mt-40 w-4/5" alt="image" width={500} height={500} />
+        <div className="w-1/2 rounded-l-xl bg-gradient-to-br via-pink-400 from-[#F48D88] to-violet-400">
+          <Image
+            src={features[featureNo].img}
+            className="block m-auto mt-40 w-[90%] hover:-translate-y-5 duration-1000"
+            alt="image"
+            width={500}
+            height={500}
+          />
         </div>
       </div>
-      <div className="m-auto py-14 flex justify-center"><button className="p-2 px-4 rounded-full border">View all features</button></div>
+      <div className="m-auto py-14 flex justify-center">
+        <button className="p-2 px-4 rounded-full border-2 font-semibold border-pink-300 inline-block text-transparent bg-clip-text hover:bg-clip-border hover:border-pink-400 hover:text-white bg-gradient-to-r via-pink-500 from-[#F48D88] to-violet-500">
+          View all features
+        </button>
+      </div>
     </div>
   );
 }

@@ -58,7 +58,7 @@ export default function Reviews() {
   const [reviewNo, setReviewNo] = useState<number>(0);
   return (
     <div className="overflow-hidden">
-      <div className="flex gap-28 animate-marquee whitespace-nowrap hover:animate-none">
+      <div className="flex gap-28 animate-marquee whitespace-nowrap">
         {images.map((image) => (
           <Image
             key={image}
@@ -95,7 +95,7 @@ export default function Reviews() {
               <Image
                 src={reviews[reviewNo].logo}
                 alt="logo"
-                className={`w-24 ${reviewNo === 1&&"w-14"}`}
+                className={`w-24 ${reviewNo === 1 && "w-14"}`}
                 width={80}
                 height={80}
               />
@@ -109,29 +109,42 @@ export default function Reviews() {
                   : () => setReviewNo((reviewNo - 1) % reviews.length)
               }
             >
-              Left
+              <Image
+                src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d5122ea3ebb_slider-arrow.svg"
+                alt="arrow"
+                className="transform rotate-180"
+                width={30}
+                height={30}
+              />
             </button>
             <button
               onClick={() => setReviewNo((reviewNo + 1) % reviews.length)}
             >
-              Right
+              <Image
+                src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d5122ea3ebb_slider-arrow.svg"
+                alt="arrow"
+                width={30}
+                height={30}
+              />
             </button>
           </div>
           <div className="flex flex-wrap gap-4 mt-20">
             {reviews[reviewNo].points.map((point) => {
               return (
-                <div className="w-[300px] rounded-xl p-4 bg-violet-100 text-center">
-                  <h1 className="text-4xl font-semibold">{point.tag}</h1>
+                <div className="min-w-[250px] max-w-[300px] rounded-xl p-4 bg-[#F1E9FC] text-center">
+                  <h1 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-violet-400">
+                    {point.tag}
+                  </h1>
                   {point.desc && <p className="pt-4">{point.desc}</p>}
                 </div>
               );
             })}
           </div>
         </div>
-        <div className="border rounded-2xl w-[400px] ">
+        <div className="border-2 border-pink-300 rounded-2xl w-[400px]">
           <Image
             src={reviews[reviewNo].img}
-            className="rounded-2xl"
+            className="rounded-2xl h-full object-cover object-right"
             alt="image"
             width={700}
             height={700}
