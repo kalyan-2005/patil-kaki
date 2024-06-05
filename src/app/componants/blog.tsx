@@ -57,7 +57,7 @@ export default function Blog() {
   };
 
   return (
-    <div className="py-20">
+    <div id="blog" className="py-20">
       <div className="flex gap-10">
         <div className="flex flex-col w-1/3 ps-32 justify-between">
           <div className="flex flex-col gap-6">

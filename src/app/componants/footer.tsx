@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="bg-primary text-gray-300 px-32 pb-32">
+    <div id="about" className="bg-primary text-gray-300 px-32 pb-32">
       <div className="flex justify-between">
         <div className="flex flex-col gap-8 w-2/5">
           <Image
@@ -78,7 +78,7 @@ export default function Footer() {
             <h1>CIN: U72900KA2022PTC163144</h1>
           </div>
         </div>
-        <div>
+        <Link href="#top">
           <Image
             src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/639b3e775b326d53d1ea3ece_go-to-top.svg"
             alt="logo"
@@ -86,7 +86,7 @@ export default function Footer() {
             width={50}
             height={50}
           />
-        </div>
+        </Link>
       </div>
     </div>
   );

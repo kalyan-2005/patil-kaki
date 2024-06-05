@@ -1,10 +1,12 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation";
 
 const links = [
     {
         name: "Product",
-        path: "/products"
+        path: "/"
     },
     {
         name: "Pricing",
@@ -16,27 +18,28 @@ const links = [
     },
     {
         name: "Customer Stories",
-        path: "/customer-stories"
+        path: "#reviews"
     },
     {
         name: "About",
-        path: "/about"
+        path: "#about"
     },
     {
         name: "Blog",
-        path: "/blog"
+        path: "#blog"
     },
 ]
 export default function Header() {
+    const pathname = usePathname();
     return(
-        <div className="flex justify-between items-center px-32 py-2 bg-primary text-white">
+        <div id="top" className="flex justify-between items-center px-32 py-2 bg-primary text-white">
             <div>
                 <Image src="https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/63d8262cbfe9e806aca29403_Crest%20white%20font%20small.png" alt="logo" width={140} height={100} />
             </div>
             <div className="flex items-center gap-7">
                 {
                     links.map((link) => (
-                        <Link href={link.path} key={link.path}>{link.name}</Link>
+                        <Link className={`${pathname === link.path&&"inline-block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500"}`} href={link.path} key={link.path}>{link.name}</Link>
                     ))
                 }
             </div>

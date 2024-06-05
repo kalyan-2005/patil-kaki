@@ -57,7 +57,7 @@ const reviews = [
 export default function Reviews() {
   const [reviewNo, setReviewNo] = useState<number>(0);
   return (
-    <div className="overflow-hidden">
+    <div id="reviews" className="overflow-hidden">
       <div className="flex gap-28 animate-marquee whitespace-nowrap">
         {images.map((image) => (
           <Image
