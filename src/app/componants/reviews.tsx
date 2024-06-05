@@ -48,8 +48,8 @@ const reviews = [
       "As Co-founders, we had zero clue on the real time stock levels in our warehouse. It felt like a battle to manually update invoices from EE to Zoho, so that at least some data points can be tracked.While we had already implemented Crest I had no clue that they could make this API integration work for us and exactly the way we wanted it to work. Thank you team Rahul Vishwakarma & Yogesh Byahatti for identifying the problem and being so quick with the solution, kudos to the amazing team you have.",
     img: "https://cdn.prod.website-files.com/639b3e775b326dcf7cea3e70/664c90f75b0f0e735016706b_P-tal.webp",
     points: [
-      { tag: "Automated Invoice Reconciliation" },
-      { tag: "Channel wise Sales Classification" },
+      { tag: "Automated Invoice Reconciliation",desc:"" },
+      { tag: "Channel wise Sales Classification",desc:"" },
     ],
   },
 ];
@@ -135,7 +135,7 @@ export default function Reviews() {
                   <h1 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-violet-400">
                     {point.tag}
                   </h1>
-                  {point.desc && <p className="pt-4">{point.desc}</p>}
+                  {reviewNo===0 && <p className="pt-4">{point.desc}</p>}
                 </div>
               );
             })}
